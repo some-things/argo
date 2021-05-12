@@ -1,25 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: tls-example-ingress1
-  namespace: default
+  name: httpd-ingress
   # annotations:
-  #   hello: world
-  #   foo: bar
+  #   kubernetes.io/ingress.class: traefik
 spec:
-  tls:
-  - hosts:
-      - https-example.foo.com
-    secretName: double-secret
   rules:
-  - host: https-example.foo.com
-    http:
+  - http:
       paths:
-      - path: /test
-        pathType: Prefix
-        backend:
-          service:
-            name: service1
-            port:
-              number: 80
-
+        - path: /httpd
+          backend:
+            serviceName: httpd-service
+            servicePort: 8080
