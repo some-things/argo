@@ -5,10 +5,18 @@ metadata:
   # annotations:
   #   kubernetes.io/ingress.class: traefik
 spec:
+  tls:
+  - hosts:
+      - https-example.foo.com
+    secretName: double-secret
   rules:
-  - http:
+  - host: https-example.foo.com
+    http:
       paths:
-        - path: /httpd
-          backend:
-            serviceName: httpd-service
-            servicePort: 8080
+      - path: /test
+        pathType: Prefix
+        backend:
+          service:
+            name: service1
+            port:
+              number: 80
