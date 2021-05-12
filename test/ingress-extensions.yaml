@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: tls-example-ingress1
   namespace: default
-  annotations:
-    hello: world
-    foo: bar
+  # annotations:
+  #   hello: world
+  #   foo: bar
 spec:
   tls:
   - hosts:
