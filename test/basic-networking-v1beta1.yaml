@@ -9,3 +9,13 @@ spec:
   backend:
     serviceName: web
     servicePort: 8080 
+  rules:
+    - http:
+        paths:
+          - path: /blahblahblah
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 8080
