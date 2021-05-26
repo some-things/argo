@@ -4,6 +4,8 @@ metadata:
   name: basic-ingress-netv1b1
   namespace: default
   annotations:
+    hello: world
+    foo: bar
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
