@@ -10,11 +10,10 @@ spec:
     serviceName: web
     servicePort: 8080 
   rules:
-    - http:
-        paths:
-          - path: /blahblah
-            pathType: Prefix
-            backend:
-              service:
-                name: web
-                port: 8080
+  - http:
+      paths:
+      - path: /test
+        pathType: Prefix
+        backend:
+          serviceName: http
+          servicePort: 8080
