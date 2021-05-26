@@ -6,14 +6,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
-  backend:
-    serviceName: web
-    servicePort: 8080 
   rules:
   - http:
       paths:
-      - path: /test
-        pathType: Prefix
-        backend:
-          serviceName: http
-          servicePort: 8080
+        - path: /blah
+          backend:
+            serviceName: web
+            servicePort: 8080
