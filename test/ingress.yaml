@@ -2,6 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: example-ingress
+  annotations:
+    hello: world
+    foo: bar
 spec:
   rules:
     - host: hello-world.info
