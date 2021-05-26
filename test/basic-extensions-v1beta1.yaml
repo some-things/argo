@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
   name: basic-ingress-ext
   namespace: default
-  annotations:
-    kubernetes.io/ingress.class: traefik
+  # annotations:
+  #   kubernetes.io/ingress.class: traefik
 spec:
   backend:
     serviceName: web
